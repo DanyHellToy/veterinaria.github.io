@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/estilos.css">
+    <title>Consulta</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="#">
+                <h1>Veterinaria El más Perrón</h1>
+            </a>
+        </div>
+    </header>
+    <div class="contenedor">
+
+        <form action="/api/cliente" method="post" enctype="multipart/form-data">
+            <h2 class="titulo">Formulario de Consulta.</h2>
+            <div class="cliente">
+                <fieldset>
+                    <legend><h3>Informacion del Cliente</h3></legend>
+                    <div class="info">
+                        <p>
+                            <label>Nombre: </label>
+                            <input type="text" name="fnombre" placeholder="Nombre del Propietario" required>
+                            
+                        </p>                
+                    </div>
+                </fieldset>
+            </div>
+           <!--  <div class="mascota"><br>
+                <fieldset>
+                    <legend><h3>Informacion de la Mascota</h3></legend>
+                    <div class="info">
+                        <p>
+                            <label>Nombre: </label>
+                            <input type="text" name="fnombre_mascota" placeholder="Nombre de la Mascota" required>
+                         
+                        </p>
+                     
+                    </div>
+                </fieldset>
+            </div>
+            
+            </div>>--->
+            <div class="div-button">
+                <input class="button" type="submit" value="Consulta">
+            </div>
+        </form>
+        <script>
+            function consultarId() {
+              const nombre = document.getElementById('nombre').value;
+              fetch(`/id/${nombre}`)
+                .then(response => response.text())
+                .then(id => alert(`El registro id correspondiente al registro ${nombre} es ${id}`))
+                .catch(error => console.error(error));
+            }
+          </script>
+    </div>
+
+    
+
+</body>
+</html>
